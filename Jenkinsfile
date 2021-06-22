@@ -21,7 +21,7 @@ pipeline {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
 		    script {
-                        git https://github.com/ghaikanav/jenkins-test.git
+                        git 'https://github.com/ghaikanav/jenkins-test.git'
                 }
 
             }

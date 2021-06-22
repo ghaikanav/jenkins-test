@@ -21,11 +21,7 @@ pipeline {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
                 script {
-                    if (!fileExists("pom.xml")) {
-                        sh "git clone https://github.com/ghaikanav/jenkins-test.git"
-                    } else {
-                        echo "Already exist"
-                    }
+                        sh "git clone https://github.com/ghaikanav/jenkins-test.git" 
                 }
 //                 dir("${path_}") {
                     sh "git pull origin main"

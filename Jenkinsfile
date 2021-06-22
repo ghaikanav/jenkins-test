@@ -21,7 +21,7 @@ pipeline {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
 		    script {
-                        sh "git clone https://github.com/ghaikanav/jenkins-test.git" 
+                        git https://github.com/ghaikanav/jenkins-test.git
                 }
 //                 dir("${path_}") {
 		    sh "cd jenkins-test"

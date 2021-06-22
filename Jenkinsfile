@@ -20,10 +20,11 @@ pipeline {
             steps {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
-                script {
+		    script {
                         sh "git clone https://github.com/ghaikanav/jenkins-test.git" 
                 }
 //                 dir("${path_}") {
+		    sh "cd jenkins-test"
                     sh "git pull origin main"
                     sh "mvn -Dmaven.test.failure.ignore=true clean install"
 //                 }

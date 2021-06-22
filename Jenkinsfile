@@ -32,7 +32,7 @@ pipeline {
                 echo "------------- Build Docker image -------------"
 //                 dir("${path_}") {
                     // Build Maven docker image and container.
-                    sh "docker image build -t jenkins-team-2 ."
+                    bat "docker image build -t jenkins-team-2 ."
 //                 }
             }
 
@@ -43,7 +43,7 @@ pipeline {
                 echo "------------- Run Docker container -------------"
 //                 dir("${path_}") {
                     // Run maven docker container
-                    sh "docker run -d jenkins-team-2:latest"
+                    bat "docker run -d jenkins-team-2:latest"
 //                 }
             }
 

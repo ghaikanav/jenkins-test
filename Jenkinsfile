@@ -23,11 +23,7 @@ pipeline {
 		    script {
                         git https://github.com/ghaikanav/jenkins-test.git
                 }
-//                 dir("${path_}") {
-		    sh "cd jenkins-test"
-                    sh "git pull origin main"
-                    sh "mvn -Dmaven.test.failure.ignore=true clean install"
-//                 }
+
             }
         }
 

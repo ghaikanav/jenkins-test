@@ -20,10 +20,17 @@ pipeline {
             steps {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
-		    script {
-                        git 'https://github.com/ghaikanav/jenkins-test.git'
+                script {
+                    if (!fileExists("pom.xml")) {
+                        bat "git clone https://github.com/ghaikanav/jenkins-test.git"
+                    } else {
+                        echo "Already exist"
+                    }
                 }
-
+//                 dir("${path_}") {
+                    bat "git pull origin main"
+                    bat "mvn -Dmaven.test.failure.ignore=true clean install"
+//                 }
             }
         }
 

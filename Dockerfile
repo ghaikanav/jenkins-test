@@ -1,5 +1,5 @@
 FROM openjdk 
 
-COPY target/my-app-1.0-SNAPSHOT.jar /deployments/
+COPY target/assessment-0.0.1-SANPSHOT.jar /deployments/
 
-CMD java -cp /deployments/my-app-1.0-SNAPSHOT.jar com.kanav.assessment.fileReader.App
+CMD java -cp /deployments/assessment-0.0.1-SANPSHOT.jar com.kanav.assessment.fileReader.App

@@ -21,11 +21,15 @@ pipeline {
                 echo "------------- Install maven dependencies and build jar -------------"
                  
                 script {
-                        sh "git clone https://github.com/ghaikanav/jenkins-test.git" 
+                    if (!fileExists("pom.xml")) {
+                        bat "git clone https://github.com/ghaikanav/jenkins-test.git"
+                    } else {
+                        echo "Already exist"
+                    }
                 }
 //                 dir("${path_}") {
-                    sh "git pull origin main"
-                    sh "mvn -Dmaven.test.failure.ignore=true clean install"
+                    bat "git pull origin main"
+                    bat "mvn -Dmaven.test.skip=true clean install"
 //                 }
             }
         }
@@ -35,7 +39,7 @@ pipeline {
                 echo "------------- Build Docker image -------------"
 //                 dir("${path_}") {
                     // Build Maven docker image and container.
-                    sh "docker image build -t jenkins-team-2 ."
+                    bat "docker image build -t jenkins-team-2 ."
 //                 }
             }
 
@@ -46,7 +50,7 @@ pipeline {
                 echo "------------- Run Docker container -------------"
 //                 dir("${path_}") {
                     // Run maven docker container
-                    sh "docker run -d jenkins-team-2:latest"
+                    bat "docker run -d jenkins-team-2:latest"
 //                 }
             }
 

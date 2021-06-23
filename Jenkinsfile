@@ -29,7 +29,7 @@ pipeline {
                 }
 //                 dir("${path_}") {
                     bat "git pull origin main"
-                    bat "mvn -Dmaven.test.failure.ignore=true clean install"
+                    bat "mvn -Dmaven.test.skip=true clean install"
 //                 }
             }
         }

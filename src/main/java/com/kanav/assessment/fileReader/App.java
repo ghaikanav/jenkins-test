@@ -25,7 +25,7 @@ public class App {
        Map<String, Employee> m = new HashMap<>();
        
       try {
-    	  br = new BufferedReader(new FileReader("D:\\PS_Training\\Assessments\\assessment1\\emps.txt"));		
+    	  br = new BufferedReader(new FileReader("emps.txt"));		
 
 	   	  //Reading the first line which contains attributes
 	   	   String contentLine = br.readLine();

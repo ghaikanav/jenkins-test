@@ -29,6 +29,7 @@ pipeline {
                 }
 //                 dir("${path_}") {
                     bat "git pull origin main"
+		    echo "repo pulled"
                     bat "mvn -Dmaven.test.skip=true clean install"
 //                 }
             }

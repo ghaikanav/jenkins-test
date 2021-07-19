@@ -52,6 +52,7 @@ pipeline {
 //                 dir("${path_}") {
                     // Run maven docker container
                     sh "docker run -d jenkins-team-2:latest"
+		    echo "execution complete"
 //                 }
             }
 
